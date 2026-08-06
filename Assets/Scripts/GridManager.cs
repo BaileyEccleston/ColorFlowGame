@@ -31,6 +31,7 @@ public class GridManager : MonoBehaviour
                 Vector3 position = new Vector3(x * tileSize - xOffset, y * tileSize - yOffset, 0);
                 Tile tile = Instantiate(tilePrefab, position, Quaternion.identity, transform);
                 tile.Position = new Vector2Int(x, y);
+                tile.name = $"Tile ({x}, {y})";
                 grid[x, y] = tile;
             }
         }
