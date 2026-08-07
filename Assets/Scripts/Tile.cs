@@ -1,4 +1,6 @@
+using NUnit.Framework;
 using UnityEngine;
+using System.Collections.Generic;
 
 
 
@@ -44,6 +46,7 @@ public enum PathSpriteType
 
 
 
+
 public class Tile : MonoBehaviour
 {
     public Vector2Int Position;
@@ -52,9 +55,22 @@ public class Tile : MonoBehaviour
 
     public ColorType Color;
 
-    //public Node node;
+    public PathSpriteType pathSprite;
+    public GameObject NormalLine;
+    public GameObject WhiteLine;
 
-    //public Path path;
+    public List<Tile> ConnectedTiles;
 
-    public bool isOccupied;
+    private void Awake()
+    {
+        if (Type == TileType.Node)
+        {
+            ConnectedTiles = new List<Tile>();
+        }
+    }
+
+
+
+
+
 }
